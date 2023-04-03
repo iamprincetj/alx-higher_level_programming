@@ -4,7 +4,7 @@ import sys
 
 
 def nqueens(n):
-    if isinstance(n, int):
+    if not n.isdigit():
         print("N must be a number")
         sys.exit(1)
     n = int(n)
