@@ -43,3 +43,9 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_for_float(self):
         self.assertEqual(max_integer([1.5, 2.5, 3.5, 5.5, 6.1, 4.5]), 6.1)
+
+    def text_for_max_at_beginning(self):
+        self.assertEqual(max_integer([5, 4, 2, 3]), 5)
+
+    def text_for_one_elem(self):
+        self.assertEqual(max_integer([8]), 8)
