@@ -47,7 +47,5 @@ class TestMaxInteger(unittest.TestCase):
     def test_max_at_beginning(self):
         self.assertEqual(max_integer([5, 4, 3, 2, 1, 0]), 5)
 
-    def text_one_num_in_list(self):
-        self.assertEqual(max_integer([8]), 8)
-
-
+    def test_one_number_in_a_list(self):
+        self.assertEqual(max_integer([1]), 1)
