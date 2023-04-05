@@ -13,7 +13,6 @@ def add_integer(a, b=98):
         The addition of a + b or a raised TypeError
     """
 
-
     if type(a) is int or type(a) is float:
         if type(b) is int or type(b) is float:
             a = int(a)
