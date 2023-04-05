@@ -44,8 +44,10 @@ class TestMaxInteger(unittest.TestCase):
     def test_for_float(self):
         self.assertEqual(max_integer([1.5, 2.5, 3.5, 5.5, 6.1, 4.5]), 6.1)
 
-    def text_max_at_beginning(self):
-        self.assertEqual(max_integer([5, 4, 2, 3]), 5)
+    def test_max_at_beginning(self):
+        self.assertEqual(max_integer([5, 4, 3, 2, 1, 0]), 5)
 
     def text_one_num_in_list(self):
         self.assertEqual(max_integer([8]), 8)
+
+
