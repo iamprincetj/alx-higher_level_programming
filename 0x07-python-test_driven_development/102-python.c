@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include <Python.h>
 #include <string.h>
+#include <Python.h>
 
 /**
  *print_python_string - a function that prints Python strings.
@@ -10,11 +10,11 @@
 
 void print_python_string(PyObject *p)
 {
-	Pyobject *str, *just;
 
-	(void)just;
+	PyObject *str, *repr;
 
-	prinf("[.] string object info\n");
+	(void)repr;
+	printf("[.] string object info\n");
 
 	if (strcmp(p->ob_type->tp_name, "str"))
 	{
@@ -23,14 +23,11 @@ void print_python_string(PyObject *p)
 	}
 
 	if (PyUnicode_IS_COMPACT_ASCII(p))
-	{
-		printf("   type: compact ascii\n")
-	}
-
+		printf("  type: compact ascii\n");
 	else
-		printf("   type: compact unicode object\n");
+		printf("  type: compact unicode object\n");
 
-	just = PyObject_Just(p);
+	repr = PyObject_Repr(p);
 	str = PyUnicode_AsEncodedString(p, "utf-8", "~E~");
 	printf("  length: %ld\n", PyUnicode_GET_SIZE(p));
 	printf("  value: %s\n", PyBytes_AsString(str));
