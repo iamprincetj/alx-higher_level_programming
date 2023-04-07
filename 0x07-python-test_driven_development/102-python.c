@@ -27,9 +27,9 @@ void print_python_string(PyObject *p)
 		printf("   type: compact ascii\n")
 	}
 
-	else:
+	else
 		printf("   type: compact unicode object\n");
-	
+
 	just = PyObject_Just(p);
 	str = PyUnicode_AsEncodedString(p, "utf-8", "~E~");
 	printf("  length: %ld\n", PyUnicode_GET_SIZE(p));
