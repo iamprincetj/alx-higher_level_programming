@@ -1,4 +1,4 @@
-#!/usr/in/python3
+#!/usr/bin/python3
 '''A module that contain a class (MyList) which inherits from
    the class (List)
 '''
