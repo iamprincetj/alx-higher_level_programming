@@ -1,0 +1,98 @@
+Testing my function 7-base_geometry
+=========================================
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> test = BaseGeometry()
+>>> test.area()
+Traceback (most recent call last):
+      ...
+Exception: area() is not implemented
+
+    >>> test = BaseGeometry()
+>>> test.integer_validator("name", "5")
+Traceback (most recent call last):
+    	      ...
+TypeError: name must be an integer
+
+>>> test = BaseGeometry()
+>>> test.integer_validator("name", True)
+Traceback (most recent call last):
+	  ...
+TypeError: name must be an integer
+
+
+>>> test = BaseGeometry()
+>>> test.integer_validator("name", -5)
+Traceback (most recent call last):
+	  ...
+ValueError: name must be greater than 0
+
+
+>>> test = BaseGeometry()
+>>> test.integer_validator("name", 0)
+Traceback (most recent call last):
+	  ...
+ValueError: name must be greater than 0
+
+
+>>> test = BaseGeometry()
+>>> test.integer_validator("name", 5)
+
+
+>>> test = BaseGeometry()
+>>> test.integer_validator("name")
+Traceback (most recent call last):
+	  ...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+>>> test = BaseGeometry()
+>>> test.integer_validator()
+Traceback (most recent call last):
+	  ...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+
+>>> test = BaseGeometry()
+>>> test.integer_validator("name", 1, 2)
+Traceback (most recent call last):
+	  ...
+TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+
+>>> test = BaseGeometry()
+>>> test.area(5)
+Traceback (most recent call last):
+	  ...
+TypeError: area() takes 1 positional argument but 2 were given
+
+>>> test = BaseGeometry()
+>>> test.area(5, 5)
+Traceback (most recent call last):
+	  ...
+TypeError: area() takes 1 positional argument but 3 were given
+
+>>> test = BaseGeometry()
+>>> test.integer_validator("age", (4,))
+Traceback (most recent call last):
+	  ...
+TypeError: age must be an integer
+
+
+>>> test = BaseGeometry()
+>>> test.integer_validator("age", [3])
+Traceback (most recent call last):
+	  ...
+TypeError: age must be an integer
+
+
+>>> test = BaseGeometry()
+>>> test.integer_validator("age", {3, 4})
+Traceback (most recent call last):
+  ...
+TypeError: age must be an integer
+
+
+>>> test = BaseGeometry()
+>>> test.integer_validator("age", None)
+Traceback (most recent call last):
+  ...
+TypeError: age must be an integer
