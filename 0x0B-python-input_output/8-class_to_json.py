@@ -3,7 +3,7 @@
 
 
 def class_to_json(obj):
-    '''The function that 
+    '''The function that
     Argument: obj: the object
     Return: the dictionary description with simple data structure
     '''
