@@ -87,11 +87,15 @@ class Rectangle(Base):
         x = self.__x
         y = self.__y
         wid = self.__width
-        height = self.__height
-        return (f"[{type(self).__name__}] ({self.id}) {x}/{y} - {wid}/{height}")
+        hei = self.__height
+        return (f"[{type(self).__name__}] ({self.id}) {x}/{y} - {wid}/{hei}")
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         '''A function that assigns an argument to each attribute'''
+        if len(args) == 0:
+            for k, v in kwargs.items():
+                self.__setattr__(k, v)
+            return
         try:
             self.id = args[0]
             self.width = args[1]
@@ -101,3 +105,9 @@ class Rectangle(Base):
 
         except IndexError:
             pass
+
+    def to_dictionary(self):
+        '''This function returns the dictionary representation of Rectangle'''
+        return {'x': getattr(self, "x"), 'y': getattr(self, "y"),
+                'id': getattr(self, "id"), 'height': getattr(self, "height"),
+                'width': getattr(self, "width")}

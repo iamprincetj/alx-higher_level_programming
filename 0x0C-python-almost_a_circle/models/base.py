@@ -8,7 +8,6 @@ class Base:
     in this particular project by Alx
     '''
 
-
     __nb_objects = 0
 
     def __init__(self, id=None):
