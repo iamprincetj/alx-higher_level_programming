@@ -2,6 +2,7 @@
 '''A module that cotains a base class'''
 import json
 import csv
+import turtle
 
 
 class Base:
